@@ -1,7 +1,5 @@
 package com.mike.givemewingzz.contentdownloader.content;
 
-import com.mike.givemewingzz.contentdownloader.utils.ContentDownloaderRegistry;
-
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -9,25 +7,31 @@ import java.util.Map;
 /**
  * Created by GiveMeWingzz on 3/8/2016.
  */
-public class ContentDownloader {
+public class Downloader {
 
     private static String TAG = ContentDownloader.class.getSimpleName();
-    private static Map<Object, Object> queryMap;
+    private static Map<Object, Object> queryMap = new LinkedHashMap<>();
 
-    protected ContentDownloader() {
+    private static Downloader instance = null;
+
+    protected Downloader() {
     }
 
-    public synchronized static ContentDownloader getInstance(String classname) {
-        return (ContentDownloader) ContentDownloaderRegistry.REGISTRY.getInstance(classname);
+    public static Downloader getInstance() {
+        if (instance == null) {
+            // Thread Safe. Might be costly operation in some case
+            synchronized (Downloader.class) {
+                if (instance == null) {
+                    instance = new Downloader();
+                }
+            }
+        }
+        return instance;
     }
 
     public static void addQueryParams(Object key, Object value) {
-        queryMap = new LinkedHashMap<>();
         queryMap.put(key, value);
     }
-
-
-
 
     public Map<Object, Object> getQueryMap() {
 

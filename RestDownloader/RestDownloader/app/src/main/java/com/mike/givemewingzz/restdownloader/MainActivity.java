@@ -9,11 +9,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.mike.givemewingzz.contentdownloader.content.ContentDownloader;
+import com.mike.givemewingzz.contentdownloader.content.Downloader;
+import com.mike.givemewingzz.contentdownloader.utils.AppUtils;
 
 public class MainActivity extends AppCompatActivity {
 
-    ContentDownloader contentDownloader;
     private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
@@ -21,10 +21,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        contentDownloader = ContentDownloader.getInstance(TAG);
-        contentDownloader.addQueryParams(1, "val1");
-        contentDownloader.addQueryParams(2, "val2");
+        final Downloader downloader = Downloader.getInstance();
+        downloader.addQueryParams(1, "val1");
+        downloader.addQueryParams(2, "val2");
 
+        AppUtils.printLog(TAG,downloader.getQueryMap()+"");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -33,8 +34,15 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Queries in hand : " + contentDownloader.getQueryMap(), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                if (downloader != null) {
+                    Snackbar.make(view, "Queries in hand : " + downloader.getQueryMap(), Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } else {
+                    Snackbar.make(view, "Content Dl Null", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+
             }
         });
     }

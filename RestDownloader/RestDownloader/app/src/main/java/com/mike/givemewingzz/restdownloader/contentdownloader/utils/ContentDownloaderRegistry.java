@@ -1,4 +1,4 @@
-package com.mike.givemewingzz.contentdownloader.utils;
+package com.mike.givemewingzz.restdownloader.contentdownloader.utils;
 
 import java.util.HashMap;
 

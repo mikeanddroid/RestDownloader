@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RestDownloader.iml" filepath="$PROJECT_DIR$/RestDownloader.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/contentdownloader/contentdownloader.iml" filepath="$PROJECT_DIR$/contentdownloader/contentdownloader.iml" />
     </modules>
   </component>
 </project>

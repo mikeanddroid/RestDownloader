@@ -1,6 +1,6 @@
-package com.mike.givemewingzz.contentdownloader.content;
+package com.mike.givemewingzz.restdownloader.contentdownloader.content;
 
-import com.mike.givemewingzz.contentdownloader.utils.ContentDownloaderRegistry;
+import com.mike.givemewingzz.restdownloader.contentdownloader.utils.ContentDownloaderRegistry;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

@@ -1,4 +1,4 @@
-package com.mike.givemewingzz.contentdownloader.service;
+package com.mike.givemewingzz.restdownloader.contentdownloader.service;
 
 /**
  * Created by GiveMeWingzz on 2/26/2016.

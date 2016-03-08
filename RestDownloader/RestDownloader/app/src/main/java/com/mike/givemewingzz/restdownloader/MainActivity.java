@@ -9,8 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.mike.givemewingzz.contentdownloader.content.Downloader;
-import com.mike.givemewingzz.contentdownloader.utils.AppUtils;
+import com.mike.givemewingzz.restdownloader.contentdownloader.content.Downloader;
+import com.mike.givemewingzz.restdownloader.contentdownloader.utils.AppUtils;
 
 public class MainActivity extends AppCompatActivity {
 

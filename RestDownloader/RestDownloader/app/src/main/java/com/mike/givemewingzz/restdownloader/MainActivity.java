@@ -5,16 +5,27 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.mike.givemewingzz.contentdownloader.content.ContentDownloader;
 
 public class MainActivity extends AppCompatActivity {
+
+    ContentDownloader contentDownloader;
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        contentDownloader = ContentDownloader.getInstance(TAG);
+        contentDownloader.addQueryParams(1, "val1");
+        contentDownloader.addQueryParams(2, "val2");
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -22,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Queries in hand : " + contentDownloader.getQueryMap(), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });

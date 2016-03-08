@@ -1,5 +1,8 @@
-sudo: false
 language: android
+
+jdk:
+	- oraclejdk8
+
 android:
   components:
     # Uncomment the lines below if you want to
@@ -14,8 +17,6 @@ android:
     - android-23
 
     # Additional components
-    - extra-google-google_play_services
-    - extra-google-m2repository
     - extra-android-m2repository
     - addon-google_apis-google-19
 

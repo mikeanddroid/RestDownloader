@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         downloader.addQueryParams(1, "val1");
         downloader.addQueryParams(2, "val2");
 
-        downloader.setBaseURL(this, "some random base url stuff");
+        downloader.setBaseURL("some random base url stuff");
 
         AppUtils.printLog(TAG, downloader.getQueryMap() + "");
         AppUtils.printLog(TAG, downloader.getBaseURL(this));

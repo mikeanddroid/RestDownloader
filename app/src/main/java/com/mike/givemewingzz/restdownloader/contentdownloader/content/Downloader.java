@@ -17,6 +17,7 @@ public class Downloader {
     private static String TAG = ContentDownloader.class.getSimpleName();
     private static Map<Object, Object> queryMap = new LinkedHashMap<>();
     private static Downloader instance = null;
+    private static RequestType requestType;
 
     protected Downloader() {
     }
@@ -48,8 +49,8 @@ public class Downloader {
         return baseUrl.getBaseUrl();
     }
 
-    public static void createGetRequest() {
-
+    public static void setRequestType(RequestType requestType) {
+        Downloader.requestType = requestType;
     }
 
     public static void addQueryParams(Object key, Object value) {
@@ -63,6 +64,42 @@ public class Downloader {
         }
 
         return queryMap;
+
+    }
+
+    public void buildRequest(RequestType requestType) {
+
+        switch (requestType) {
+
+            case GET:
+                break;
+            case POST:
+                break;
+            case PUT:
+                break;
+            case DELETE:
+                break;
+
+        }
+
+    }
+
+    public enum RequestType {
+
+        GET(""),
+        POST(""),
+        PUT(""),
+        DELETE("");
+
+        private String format_result;
+
+        RequestType(String format) {
+            this.format_result = format;
+        }
+
+        public String getFormat_result() {
+            return format_result;
+        }
 
     }
 

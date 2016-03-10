@@ -1,5 +1,6 @@
 package com.mike.givemewingzz.restdownloader;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.mike.givemewingzz.restdownloader.contentdownloader.content.Downloader;
 import com.mike.givemewingzz.restdownloader.contentdownloader.utils.AppUtils;
@@ -25,7 +27,10 @@ public class MainActivity extends AppCompatActivity {
         downloader.addQueryParams(1, "val1");
         downloader.addQueryParams(2, "val2");
 
-        AppUtils.printLog(TAG,downloader.getQueryMap()+"");
+        downloader.setBaseURL(this, "some random base url stuff");
+
+        AppUtils.printLog(TAG, downloader.getQueryMap() + "");
+        AppUtils.printLog(TAG, downloader.getBaseURL(this));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -45,6 +50,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        TextView textView = (TextView) findViewById(R.id.sampleText);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override

@@ -1,5 +1,9 @@
 package com.mike.givemewingzz.restdownloader.contentdownloader.content;
 
+import android.content.Context;
+
+import com.mike.givemewingzz.restdownloader.contentdownloader.models.BaseUrl;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -11,7 +15,6 @@ public class Downloader {
 
     private static String TAG = ContentDownloader.class.getSimpleName();
     private static Map<Object, Object> queryMap = new LinkedHashMap<>();
-
     private static Downloader instance = null;
 
     protected Downloader() {
@@ -27,6 +30,20 @@ public class Downloader {
             }
         }
         return instance;
+    }
+
+    public void setBaseURL(Context context, String baseURL) {
+        BaseUrl baseUrl = new BaseUrl(context);
+        baseUrl.setBaseUrl(baseURL);
+    }
+
+    public String getBaseURL(Context context) {
+        BaseUrl baseUrl = new BaseUrl(context);
+        return baseUrl.getBaseUrl();
+    }
+
+    public static void createGetRequest() {
+
     }
 
     public static void addQueryParams(Object key, Object value) {

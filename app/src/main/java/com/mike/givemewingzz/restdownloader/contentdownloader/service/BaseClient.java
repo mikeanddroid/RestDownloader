@@ -5,11 +5,11 @@ package com.mike.givemewingzz.restdownloader.contentdownloader.service;
  */
 public class BaseClient {
 
-//    public static final String TAG = BaseClient.class.getSimpleName();
-//
-//    private BaseClient() {
-//    }
-//
+    public static final String TAG = BaseClient.class.getSimpleName();
+
+    private BaseClient() {
+    }
+
 //    public static RetrofitInterface getRetrofitInterface() {
 //        return LazySIDCInterface.INSTANCE;
 //    }

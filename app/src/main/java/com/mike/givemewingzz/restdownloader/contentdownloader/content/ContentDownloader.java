@@ -12,7 +12,7 @@ import java.util.Map;
 public class ContentDownloader {
 
     private static String TAG = ContentDownloader.class.getSimpleName();
-    private static Map<Object, Object> queryMap;
+    private static Map<Object, Object> queryMap = new LinkedHashMap<>();
 
     protected ContentDownloader() {
     }
@@ -22,11 +22,9 @@ public class ContentDownloader {
     }
 
     public static void addQueryParams(Object key, Object value) {
-        queryMap = new LinkedHashMap<>();
+
         queryMap.put(key, value);
     }
-
-
 
 
     public Map<Object, Object> getQueryMap() {

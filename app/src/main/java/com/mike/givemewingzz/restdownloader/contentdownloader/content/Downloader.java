@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.mike.givemewingzz.restdownloader.contentdownloader.RestDownloader;
 import com.mike.givemewingzz.restdownloader.contentdownloader.models.BaseUrl;
+import com.mike.givemewingzz.restdownloader.contentdownloader.utils.AppUtils;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -72,12 +73,16 @@ public class Downloader {
         switch (requestType) {
 
             case GET:
+                AppUtils.printLog(TAG,"Will do a GET Request");
                 break;
             case POST:
+                AppUtils.printLog(TAG,"Will do a POST Request");
                 break;
             case PUT:
+                AppUtils.printLog(TAG,"Will do a PUT Request");
                 break;
             case DELETE:
+                AppUtils.printLog(TAG,"Will do a DELETE Request");
                 break;
 
         }

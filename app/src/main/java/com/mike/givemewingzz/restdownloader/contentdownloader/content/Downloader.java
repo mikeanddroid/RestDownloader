@@ -43,7 +43,7 @@ public class Downloader {
     }
 
     public static void createGetRequest() {
-
+        
     }
 
     public static void addQueryParams(Object key, Object value) {

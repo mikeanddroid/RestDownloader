@@ -68,21 +68,21 @@ public class Downloader {
 
     }
 
-    public void buildRequest(RequestType requestType) {
+    public void buildRequest(RequestType requestType, Class<?> clazz) {
 
         switch (requestType) {
 
             case GET:
-                AppUtils.printLog(TAG,"Will do a GET Request");
+                AppUtils.printLog(TAG, "Will do a GET Request");
                 break;
             case POST:
-                AppUtils.printLog(TAG,"Will do a POST Request");
+                AppUtils.printLog(TAG, "Will do a POST Request");
                 break;
             case PUT:
-                AppUtils.printLog(TAG,"Will do a PUT Request");
+                AppUtils.printLog(TAG, "Will do a PUT Request");
                 break;
             case DELETE:
-                AppUtils.printLog(TAG,"Will do a DELETE Request");
+                AppUtils.printLog(TAG, "Will do a DELETE Request");
                 break;
 
         }

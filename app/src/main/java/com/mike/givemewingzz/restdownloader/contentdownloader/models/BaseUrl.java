@@ -9,15 +9,15 @@ import com.mike.givemewingzz.restdownloader.contentdownloader.utils.PreferenceMo
  */
 public class BaseUrl {
 
-    private PreferenceModel preferenceModel;
-    private static final String BASE_URL_KEY = "BASE_URL_KEY";
+    private static PreferenceModel preferenceModel;
+    public static final String BASE_URL_KEY = "BASE_URL_KEY";
 
     public BaseUrl(Context context) {
         Context c = context;
         preferenceModel = new PreferenceModel(c);
     }
 
-    public String getBaseUrl() {
+    public static String getBaseUrl() {
         return preferenceModel.getString(BASE_URL_KEY);
     }
 
